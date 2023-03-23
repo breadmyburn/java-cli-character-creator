@@ -65,7 +65,13 @@ public class Main {
                         }
                     }
                 }
-                case "block" -> System.out.println("Block!");
+                case "block" -> {
+                    if (character instanceof Paladin paladin) {
+                        paladin.Block();
+                    } else {
+                        System.out.println("Your character can't do that!");
+                    }
+                }
                 case "info" -> System.out.println("Info!");
                 case "goodbye" -> {
                     System.out.println("Goodbye.");
