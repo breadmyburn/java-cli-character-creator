@@ -16,4 +16,12 @@ public abstract class Jobless {
     };
 
     public abstract void greeting();
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
 }
