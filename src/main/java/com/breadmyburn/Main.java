@@ -72,7 +72,13 @@ public class Main {
                         System.out.println("Your character can't do that!");
                     }
                 }
-                case "info" -> System.out.println("Info!");
+                case "info" -> {
+                    System.out.println("""
+                            Name: %s
+                            Age: %d
+                            Class: %s
+                            """.formatted(character.getName(), character.getAge(), character.getClass().getSimpleName()));
+                }
                 case "goodbye" -> {
                     System.out.println("Goodbye.");
                 }
