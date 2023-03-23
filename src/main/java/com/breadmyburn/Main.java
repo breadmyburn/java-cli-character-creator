@@ -49,12 +49,28 @@ public class Main {
             switch (action.toLowerCase()) {
                 case "introduce" -> character.introduce();
                 case "greeting" -> character.greeting();
-                case "attack" -> System.out.println("Attack!");
+                case "attack" -> {
+                    if (character instanceof Saber saber) {
+                        saber.Slash();
+                    } else if (character instanceof Paladin paladin) {
+                        paladin.Slash();
+                    } else if (character instanceof Archer archer) {
+                        archer.Shoot();
+                    } else if (character instanceof Hunter hunter) {
+                        System.out.println("Do you want to use your [SWORD] or [GUN]?");
+                        weapon = scanner.nextLine();
+                        switch (weapon.toLowerCase()) {
+                            case "sword" -> hunter.Slash();
+                            case "gun" -> hunter.Shoot();
+                        }
+                    }
+                }
                 case "block" -> System.out.println("Block!");
                 case "info" -> System.out.println("Info!");
                 case "goodbye" -> {
                     System.out.println("Goodbye.");
                 }
+                default -> throw new IllegalArgumentException();
             }
 
         } else {
