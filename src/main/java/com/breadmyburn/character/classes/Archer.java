@@ -11,12 +11,12 @@ public class Archer extends Jobless implements Gun {
     // Archer class greeting phrase when using 'Greet' action
     @Override
     public void greeting() {
-        System.out.println("I prefer fighting from afar.");
+        System.out.println(">> I prefer fighting from afar.\n");
     }
 
     // Archer class 'Attack' action thanks to Gun interface
     @Override
     public void Shoot() {
-        System.out.println(name + " fires his weapon.");
+        System.out.println(">> " + name + " fires his gun.\n");
     }
 }

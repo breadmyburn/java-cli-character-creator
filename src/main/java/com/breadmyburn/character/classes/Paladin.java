@@ -12,18 +12,18 @@ public class Paladin extends Jobless implements Sword, Shield {
     // Paladin class greeting phrase when using 'Greet' action
     @Override
     public void greeting() {
-        System.out.println("I have an oath to follow.");
+        System.out.println(">> I have an oath to follow.\n");
     }
 
     // Paladin class 'Block' action thanks to Shield interface
     @Override
     public void Block() {
-        System.out.println(name + " withstood the attack!");
+        System.out.println(">> " + name + " withstood the attack!\n");
     }
 
     // Paladin class 'Attack' action thanks to Sword interface
     @Override
     public void Slash() {
-        System.out.println(name + " makes a swiping motion.");
+        System.out.println(">> " + name + " makes a swiping motion.\n");
     }
 }

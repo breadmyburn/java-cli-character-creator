@@ -15,7 +15,7 @@ public abstract class Jobless {
 
     // Character gives an introduction
     public void introduce() {
-        System.out.println("My name is " + name);
+        System.out.println(">> My name is " + name);
     };
 
     // Character's greeting function

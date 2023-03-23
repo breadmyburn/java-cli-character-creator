@@ -11,12 +11,12 @@ public class Saber extends Jobless implements Sword {
     // Saber class greeting phrase when using 'Greet' action
     @Override
     public void greeting() {
-        System.out.println("I like to fight strong people!");
+        System.out.println(">> I like to fight strong people!\n");
     }
 
     // Saber class 'Attack' action thanks to Sword interface
     @Override
     public void Slash() {
-        System.out.println(name + " makes a slash attack!");
+        System.out.println(">> " + name + " makes a slash attack!\n");
     }
 }

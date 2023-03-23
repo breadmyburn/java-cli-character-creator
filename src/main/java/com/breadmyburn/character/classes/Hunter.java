@@ -12,18 +12,18 @@ public class Hunter extends Jobless implements Sword, Gun {
     // Hunter class greeting phrase when using 'Greet' action
     @Override
     public void greeting() {
-        System.out.println("Do you have a job for me?");
+        System.out.println(">> Do you have a job for me?\n");
     }
 
     // Hunter class 'Attack' action option 1 thanks to Gun interface
     @Override
     public void Shoot() {
-        System.out.println(name + " aims at his target.");
+        System.out.println(">> " + name + " aims at his target.\n");
     }
 
     // Hunter class 'Attack' action option 2 thanks to Sword interface
     @Override
     public void Slash() {
-        System.out.println(name + " swiftly strikes his opponent!");
+        System.out.println(">> " + name + " swiftly strikes his opponent!\n");
     }
 }
