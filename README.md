@@ -69,6 +69,11 @@ To run the program, the following should be first installed:
 9. Input the action you want your character to do. You will be able to do as many actions as you want.
 10. If you want to end the program, choose the "Goodbye" option in the action list.
 
+# Future Implementations
+* Implement Picocli
+* Add Character Inventory using ArrayList
+* More Classes!
+
 # References
 * Core Java for the Impatient 3rd Edition by Cay S. Horstmann
 * [Javatpoint Java Tutorial](https://www.javatpoint.com/java-tutorial)
