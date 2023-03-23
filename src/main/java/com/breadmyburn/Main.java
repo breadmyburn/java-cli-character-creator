@@ -1,6 +1,7 @@
 package com.breadmyburn;
 
 import com.breadmyburn.character.classes.*;
+import com.breadmyburn.character.weapons.*;
 
 import java.util.Scanner;
 
@@ -13,6 +14,7 @@ public class Main {
         String jobClass;
         Jobless character = null;
         String action;
+        String weapon;
 
         System.out.println("Hello! Do you want to create a character?");
         decision = scanner.nextLine();
@@ -33,7 +35,28 @@ public class Main {
                 default -> throw new IllegalArgumentException();
             }
 
-            character.greeting();
+            System.out.println("Congratulations! You have created a new character.\n");
+            System.out.println("""
+                    What action do you want your character to do?
+                    - Introduce
+                    - Greeting
+                    - Attack
+                    - Block (only for Paladins)
+                    - Info
+                    - Goodbye""");
+            action = scanner.nextLine();
+
+            switch (action.toLowerCase()) {
+                case "introduce" -> character.introduce();
+                case "greeting" -> character.greeting();
+                case "attack" -> System.out.println("Attack!");
+                case "block" -> System.out.println("Block!");
+                case "info" -> System.out.println("Info!");
+                case "goodbye" -> {
+                    System.out.println("Goodbye.");
+                }
+            }
+
         } else {
             System.out.println("Ok.");
         }
