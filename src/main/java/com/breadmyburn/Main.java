@@ -36,55 +36,58 @@ public class Main {
             }
 
             System.out.println("Congratulations! You have created a new character.\n");
-            System.out.println("""
+
+            loop: while (true) {
+                System.out.println("""
                     What action do you want your character to do?
                     - Introduce
-                    - Greeting
+                    - Greet
                     - Attack
                     - Block (only for Paladins)
                     - Info
                     - Goodbye""");
-            action = scanner.nextLine();
+                action = scanner.nextLine();
 
-            switch (action.toLowerCase()) {
-                case "introduce" -> character.introduce();
-                case "greeting" -> character.greeting();
-                case "attack" -> {
-                    if (character instanceof Saber saber) {
-                        saber.Slash();
-                    } else if (character instanceof Paladin paladin) {
-                        paladin.Slash();
-                    } else if (character instanceof Archer archer) {
-                        archer.Shoot();
-                    } else if (character instanceof Hunter hunter) {
-                        System.out.println("Do you want to use your [SWORD] or [GUN]?");
-                        weapon = scanner.nextLine();
-                        switch (weapon.toLowerCase()) {
-                            case "sword" -> hunter.Slash();
-                            case "gun" -> hunter.Shoot();
+                switch (action.toLowerCase()) {
+                    case "introduce" -> character.introduce();
+                    case "greeting" -> character.greeting();
+                    case "attack" -> {
+                        if (character instanceof Saber saber) {
+                            saber.Slash();
+                        } else if (character instanceof Paladin paladin) {
+                            paladin.Slash();
+                        } else if (character instanceof Archer archer) {
+                            archer.Shoot();
+                        } else if (character instanceof Hunter hunter) {
+                            System.out.println("Do you want to use your [SWORD] or [GUN]?");
+                            weapon = scanner.nextLine();
+                            switch (weapon.toLowerCase()) {
+                                case "sword" -> hunter.Slash();
+                                case "gun" -> hunter.Shoot();
+                            }
                         }
                     }
-                }
-                case "block" -> {
-                    if (character instanceof Paladin paladin) {
-                        paladin.Block();
-                    } else {
-                        System.out.println("Your character can't do that!");
+                    case "block" -> {
+                        if (character instanceof Paladin paladin) {
+                            paladin.Block();
+                        } else {
+                            System.out.println("Your character can't do that!");
+                        }
                     }
-                }
-                case "info" -> {
-                    System.out.println("""
+                    case "info" -> {
+                        System.out.println("""
                             Name: %s
                             Age: %d
                             Class: %s
                             """.formatted(character.getName(), character.getAge(), character.getClass().getSimpleName()));
+                    }
+                    case "goodbye" -> {
+                        System.out.println("Goodbye.");
+                        break loop;
+                    }
+                    default -> throw new IllegalArgumentException();
                 }
-                case "goodbye" -> {
-                    System.out.println("Goodbye.");
-                }
-                default -> throw new IllegalArgumentException();
             }
-
         } else {
             System.out.println("Ok.");
         }
