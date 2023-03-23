@@ -1,4 +1,5 @@
 # Character Creator on CLI using Java
+![image](https://user-images.githubusercontent.com/49784687/227219629-e0708dc8-6a90-4baf-a177-8f8c18bb11e4.png)
 
 # Overview
 Create your own character on the CLI. Give your character a name, choose from the various character classes available, and do some actions!
