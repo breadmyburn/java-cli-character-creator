@@ -48,7 +48,7 @@ public class Main {
                     - Attack
                     - Block (only for Paladins)
                     - Info
-                    - Goodbye""");
+                    - Leave""");
                     action = scanner.nextLine();
 
                     // Character Action Selection
@@ -56,7 +56,7 @@ public class Main {
                         // Character introduces themselves
                         case "introduce" -> character.introduce();
                         // Character gives a greeting (depends on character job class)
-                        case "greeting" -> character.greeting();
+                        case "greet" -> character.greeting();
                         // Character attacks!
                         case "attack" -> {
                             // Saber class attack
@@ -78,7 +78,7 @@ public class Main {
                                 switch (weapon.toLowerCase()) {
                                     case "sword" -> hunter.Slash();
                                     case "gun" -> hunter.Shoot();
-                                    default -> System.out.println("That's not an option!");
+                                    default -> System.out.println("That's not an option!\n");
                                 }
                             }
                         }
@@ -87,7 +87,7 @@ public class Main {
                             if (character instanceof Paladin paladin) {
                                 paladin.Block();
                             } else {
-                                System.out.println("Your character can't do that!");
+                                System.out.println("Your character can't do that!\n");
                             }
                         }
                         // Character information is shown
@@ -99,10 +99,10 @@ public class Main {
                             """.formatted(character.getName(), character.getAge(), character.getClass().getSimpleName()));
                         }
                         // Exit program
-                        case "goodbye" -> {
+                        case "leave" -> {
                             break actionLoop;
                         }
-                        default -> throw new IllegalArgumentException();
+                        default -> System.out.println("There's no such option!\n");
                     }
                 }
             } catch (IllegalArgumentException e) {
