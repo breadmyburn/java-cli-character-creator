@@ -4,6 +4,8 @@ public abstract class Jobless {
     String name;
     int age;
 
+    public Jobless() {};
+
     public Jobless(String name, int age) {
         this.name = name;
         this.age = age;
